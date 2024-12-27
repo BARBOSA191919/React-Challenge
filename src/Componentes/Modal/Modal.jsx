@@ -83,7 +83,7 @@ const Modal = ({ isOpen, onClose, videoData, onSave }) => {
               <option value="Frontend">Frontend</option>
               <option value="Backend">Backend</option>
               <option value="Innovación y Gestión">Innovación y Gestión</option>
-            </select>
+              </select>
           </div>
 
           <div className="form-group">
@@ -121,6 +121,13 @@ const Modal = ({ isOpen, onClose, videoData, onSave }) => {
           </div>
 
           <div className="button-group">
+          <button
+              type="submit"
+              className="save-button"
+            >
+              Guardar
+            </button>
+            
             <button
               type="button"
               onClick={handleReset}
@@ -128,12 +135,7 @@ const Modal = ({ isOpen, onClose, videoData, onSave }) => {
             >
               Limpiar
             </button>
-            <button
-              type="submit"
-              className="save-button"
-            >
-              Guardar
-            </button>
+           
           </div>
         </form>
       </div>

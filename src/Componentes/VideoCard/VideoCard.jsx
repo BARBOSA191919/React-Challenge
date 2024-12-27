@@ -2,7 +2,7 @@ import React from 'react';
 import './VideoCard.css';
 import { FaEdit, FaTrashRestoreAlt } from 'react-icons/fa';
 
-const VideoCard = ({ title, category, image, borderColor, onDelete, onEdit }) => {
+const VideoCard = ({ title, image, borderColor, onDelete, onEdit }) => {
   return (
     <div className={`video-card mb-6 ${borderColor}`}>
       <div className="relative group">
@@ -18,7 +18,7 @@ const VideoCard = ({ title, category, image, borderColor, onDelete, onEdit }) =>
           >
             <FaTrashRestoreAlt className="inline-block mr-1" /> Borrar
           </button>
-          
+
           <button
             className="bg-black bg-opacity-60 text-white px-4 py-1 rounded text-sm hover:bg-opacity-80 transition-colors duration-300"
             onClick={onEdit}
@@ -28,8 +28,7 @@ const VideoCard = ({ title, category, image, borderColor, onDelete, onEdit }) =>
      
         </div>
       </div>
-      <h3 className="text-lg font-semibold text-white mt-2">{title}</h3>
-      <p className="text-blue-500">{category}</p>
+
     </div>
   );
 };

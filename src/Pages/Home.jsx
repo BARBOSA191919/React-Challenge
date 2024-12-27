@@ -53,24 +53,24 @@ const Home = () => {
         video: 'https://www.youtube.com/watch?v=PztCEdIJITY',
       }
     ],
-    innovacion: [
+    'Innovación y Gestión': [
       {
         title: 'Video Innovación y Gestión 1',
-        category: 'INNOVACIÓN Y GESTIÓN',
+        category: 'Innovación y Gestión',
         image: "https://i.ytimg.com/vi/vhwspfvI52k/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCqexH9fRQBKlGPWhCiwZvXZxuU3g",
         description: 'Descripción de video Innovación y gestión 1',
         video: 'https://www.youtube.com/watch?v=PztCEdIJITY',
       },
       {
         title: 'Video Innovación y Gestión 2',
-        category: 'INNOVACIÓN Y GESTIÓN',
+        category: 'Innovación y Gestión',
         image: "https://i.ytimg.com/vi/YhR7Zp8NUzE/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLA85X__bV2DjIuEnZUEPZyoRkurpw",
         description: 'Descripción de video Innovación y gestión 2',
         video: 'https://www.youtube.com/watch?v=PztCEdIJITY',
       },
       {
         title: 'Video Innovación y Gestión 3',
-        category: 'INNOVACIÓN Y GESTIÓN',
+        category: 'Innovación y Gestión',
         image: "https://i.ytimg.com/vi/6N3OkLCfK-0/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLD15u5dbwMTsHSMc_X7uvc5eTr-9A",
         description: 'Descripción de video Innovación y gestión 3',
         video: 'https://www.youtube.com/watch?v=PztCEdIJITY',
@@ -88,15 +88,42 @@ const Home = () => {
   
   const handleSave = (updatedVideo) => {
     setVideos((prevVideos) => {
-      const category = updatedVideo.category.toLowerCase(); // Asegúrate de que la categoría esté en minúsculas
-      return {
-        ...prevVideos,
-        [category]: prevVideos[category].map((v) =>
-          v.title === updatedVideo.title ? updatedVideo : v
-        ),
-      };
+      // Crear copias de trabajo
+      const newVideos = { ...prevVideos };
+      
+      // Buscar en qué categoría está el video original
+      for (const category in newVideos) {
+        const videoIndex = newVideos[category].findIndex(
+          v => v.title === selectedVideo.title
+        );
+        
+        if (videoIndex !== -1) {
+          // Eliminar el video de su categoría original
+          newVideos[category] = newVideos[category].filter(
+            v => v.title !== selectedVideo.title
+          );
+          
+          // Usar la categoría exacta del formulario
+          const newCategory = updatedVideo.category === 'Innovación y Gestión' 
+            ? 'Innovación y Gestión' 
+            : updatedVideo.category.toLowerCase();
+          
+          // Asegurar que la categoría existe
+          if (!newVideos[newCategory]) {
+            newVideos[newCategory] = [];
+          }
+          
+          // Agregar video actualizado a la nueva categoría
+          newVideos[newCategory].push(updatedVideo);
+          
+          break;
+        }
+      }
+      
+      return newVideos;
     });
-    setIsModalOpen(false); // Cierra el modal después de guardar
+    
+    setIsModalOpen(false);
   };
 
   const handleDelete = (category, videoIndex) => {
@@ -115,16 +142,20 @@ const Home = () => {
       <Header />
       <Banner />
       <div className="py-4">
-        {Object.keys(videos).map((categoryKey) => (
-          <CategoriaSection
-            key={categoryKey}
-            title={categoryKey.toUpperCase()}
-            videos={videos[categoryKey]}
-            borderColor={`border-${categoryKey}`}
-            onEdit={handleEdit}
-            onDelete={(index) => handleDelete(categoryKey, index)}
-          />
-        ))}
+      {Object.keys(videos).map((categoryKey) => (
+  <CategoriaSection
+    key={categoryKey}
+    title={
+      categoryKey === "Innovación y Gestión" 
+        ? "INNOVACIÓN Y GESTIÓN" 
+        : categoryKey.toUpperCase()
+    }
+    videos={videos[categoryKey]}
+    borderColor={`border-${categoryKey.toLowerCase().replace(/\s+/g, '')}`}
+    onEdit={handleEdit}
+    onDelete={(index) => handleDelete(categoryKey, index)}
+  />
+))}
       </div>
       <Footer />
       {isModalOpen && (
