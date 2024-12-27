@@ -1,0 +1,54 @@
+.video-card {
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Para que el borde no sobresalga */
+  width: 400px; /* Ajusta el ancho según sea necesario */
+  height: auto; /* Mantiene la proporción de la imagen */
+  transition: transform 0.2s ease; /* Efecto de hover */
+  background-color: black; /* Fondo negro para toda la carta */
+}
+
+.video-card:hover {
+  transform: translateY(-4px); /* Efecto de elevación al pasar el mouse */
+}
+
+.video-thumbnail {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: 100%; /* Ajusta la altura para que se mantenga la proporción */
+  aspect-ratio: 16/9; /* Mantiene la relación de aspecto */
+  object-fit: cover; /* Cubre el contenedor sin distorsionar la imagen */
+}
+
+/* Clases para los bordes de las cartas */
+.border-blue {
+  border: 5px solid #097aebbe; /* Azul para Frontend */
+}
+
+.border-green {
+  border: 5px solid #38a169; /* Verde para Backend */
+}
+
+.border-yellow {
+  border: 5px solid #ecc94b; /* Amarillo para Innovación y Gestión */
+}
+
+/* Estilo para los botones */
+button {
+  width: 100%; /* Botones ocupan todo el ancho */
+  display: flex; /* Usar flexbox para centrar el contenido */
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+  padding: 0.5rem; /* Espaciado interno */
+  border: none; /* Sin borde */
+  color: white; /* Texto blanco */
+  background-color: black; /* Fondo negro */
+  transition: background-color 0.3s; /* Transición suave para el hover */
+}
+
+button:hover {
+  background-color: #333; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilo para los iconos */
+button .inline-block {
+  margin-right: 0.5rem; /* Espacio entre el icono y el texto */
+}

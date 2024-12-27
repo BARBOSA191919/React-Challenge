@@ -1,0 +1,36 @@
+/* Footer General */
+.footer {
+  position: relative;
+  width: 100%; /* Mismo ancho que el navbar */
+  height: 150px; /* Misma altura que el navbar */
+  background: black; /* Fondo negro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Imagen del Footer */
+.footer-logo {
+  height: 100%; /* Ocupa todo el alto */
+  object-fit: contain; /* Ajusta sin recortar ni deformar */
+  transition: transform 0.2s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Línea decorativa en el footer */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+}

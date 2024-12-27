@@ -1,0 +1,65 @@
+.categoria-section {
+  margin: 2rem 0;
+}
+
+/* Estilo para el título de la categoría */
+.categoria-title {
+  display: inline-block;
+  color: rgb(255, 255, 255); /* Texto blanco */
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 1.5rem; /* Ajusta el tamaño de la fuente según sea necesario */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para el título */
+}
+
+/* Clases para los colores de fondo */
+.border-blue {
+  background-color: #25cdeb; /* Azul para Frontend */
+}
+
+.border-green {
+  background-color: #38a169; /* Verde para Backend */
+}
+
+.border-yellow {
+  background-color: #ecc94b; /* Amarillo para Innovación y Gestión */
+}
+
+/* Clases para los bordes de las cartas */
+.border-blue {
+  border: 6px solid #25cdeb; /* Azul para Frontend */
+}
+
+.border-green {
+  border: 6px solid #38a169; /* Verde para Backend */
+}
+
+.border-yellow {
+  border: 6px solid #ecc94b; /* Amarillo para Innovación y Gestión */
+}
+
+
+.videos {
+  height: 50px;
+  width: 50px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 1.5rem; /* Espacio entre columnas */
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}

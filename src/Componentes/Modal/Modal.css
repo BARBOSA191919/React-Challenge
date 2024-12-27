@@ -1,0 +1,108 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 24px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.modal-header h2 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.close-button {
+  color: #666;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.close-button:hover {
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  background-color: #2a2a2a;
+  border: 2px solid #333;
+  border-radius: 4px;
+  color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #0096FF;
+  outline: none;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.reset-button,
+.save-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-button {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.save-button {
+  background-color: #0096FF;
+  border: none;
+  color: white;
+}
+
+.reset-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.save-button:hover {
+  background-color: #0077cc;
+}

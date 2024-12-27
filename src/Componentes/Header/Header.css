@@ -1,0 +1,71 @@
+/* General Navbar Styles */
+.navbar {
+  position: relative; /* Permite posicionar elementos encima */
+  width: 100%; /* Ocupa todo el ancho */
+  height: 100px; /* Ajusta la altura del navbar */
+  overflow: hidden; /* Evita contenido fuera del contenedor */
+  align-items: center;
+  display: flex;
+}
+
+/* Imagen del Navbar */
+.navbar-image {
+  width: 100%; /* Ocupa todo el ancho */
+  height: 100%; /* Ocupa todo el alto del navbar */
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+/* Botones del Navbar */
+.navbar-buttons {
+  position: absolute; /* Superpone los botones encima de la imagen */
+  top: 50%; /* Centra verticalmente */
+  left: 70rem; /* Los botones quedan alineados a la izquierda */
+  transform: translateY(-50%); /* Ajusta posición al centro vertical */
+  display: flex;
+  gap: 1rem;
+}
+
+/* Botón Base */
+.button {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* HOME Button Styles */
+.button-home {
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
+}
+
+.button-home:hover {
+  background-color: #2563eb;
+  color: white;
+}
+
+.button-home-active {
+  border: 2px solid #2563eb;
+  background-color: #2563eb;
+  color: white;
+}
+
+/* NUEVO VIDEO Button Styles */
+.button-video {
+  border: 2px solid white;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
+}
+
+.button-video:hover {
+  background-color: white;
+  color: black;
+}
+
+.button-video-active {
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+}
