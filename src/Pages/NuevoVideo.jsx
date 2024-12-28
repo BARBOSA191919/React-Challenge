@@ -55,10 +55,13 @@ const NuevoVideo = () => {
               COMPLETE EL FORMULARIO PARA CREAR UNA NUEVA TARJETA DE VIDEO
             </p>
           </div>
-          
+          <div className="form-tarjeta">
+                      <h1 className="form-title">Crear Tarjeta</h1>
+
+          </div>
           <form onSubmit={handleSubmit}>
   <div className="form-grid">
-    <div className="form-group">
+    <div  className={`form-group ${errors.titulo ? 'error' : ''}`}>
       <label className="form-label">Título</label>
       <input
         type="text"
@@ -66,11 +69,13 @@ const NuevoVideo = () => {
         value={form.titulo}
         onChange={handleChange}
         className="form-input"
+        placeholder="Ingrese el titulo de la imagen"
+
       />
       {errors.titulo && <p className="error-message">{errors.titulo}</p>}
     </div>
 
-    <div className="form-group">
+    <div  className={`form-group ${errors.categoria ? 'error' : ''}`}>
       <label className="form-label">Categoría</label>
       <select
         name="categoria"
@@ -86,7 +91,7 @@ const NuevoVideo = () => {
       {errors.categoria && <p className="error-message">{errors.categoria}</p>}
     </div>
 
-    <div className="form-group">
+    <div  className={`form-group ${errors.imagen ? 'error' : ''}`}>
       <label className="form-label">Imagen</label>
       <input
         type="text"
@@ -99,7 +104,7 @@ const NuevoVideo = () => {
       {errors.imagen && <p className="error-message">{errors.imagen}</p>}
     </div>
 
-    <div className="form-group">
+    <div  className={`form-group ${errors.video ? 'error' : ''}`}>
       <label className="form-label">Video</label>
       <input
         type="text"
@@ -124,6 +129,13 @@ const NuevoVideo = () => {
     </div>
 
     <div className="button-container">
+    <button
+        type="submit"
+        className="button button-save"
+      >
+        GUARDAR
+      </button>
+
       <button
         type="button"
         onClick={handleReset}
@@ -131,12 +143,7 @@ const NuevoVideo = () => {
       >
         LIMPIAR
       </button>
-      <button
-        type="submit"
-        className="button button-save"
-      >
-        GUARDAR
-      </button>
+     
     </div>
   </div>
 </form>

@@ -2,7 +2,7 @@
 .navbar {
   position: relative; /* Permite posicionar elementos encima */
   width: 100%; /* Ocupa todo el ancho */
-  height: 100px; /* Ajusta la altura del navbar */
+  height: 90px; /* Ajusta la altura del navbar */
   overflow: hidden; /* Evita contenido fuera del contenedor */
   align-items: center;
   display: flex;

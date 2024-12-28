@@ -2,7 +2,7 @@
 .footer {
   position: relative;
   width: 100%; /* Mismo ancho que el navbar */
-  height: 150px; /* Misma altura que el navbar */
+  height: 120px; /* Misma altura que el navbar */
   background: black; /* Fondo negro */
   display: flex;
   flex-direction: column;
@@ -14,7 +14,8 @@
 
 /* Imagen del Footer */
 .footer-logo {
-  height: 100%; /* Ocupa todo el alto */
+  width: 100%; /* Cambia el ancho al 80% del contenedor */
+  height: 150%; /* Ajusta automáticamente la altura para mantener la proporción */
   object-fit: contain; /* Ajusta sin recortar ni deformar */
   transition: transform 0.2s ease;
 }
@@ -22,10 +23,9 @@
 .footer-logo:hover {
   transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
 }
-
 /* Línea decorativa en el footer */
 .footer-divider {
-  width: 100%;
+  width: 150%;
   height: 1px;
   background: linear-gradient(
     to right,
