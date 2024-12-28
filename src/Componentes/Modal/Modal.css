@@ -1,7 +1,7 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.9); /* Fondo más oscuro */
+  background-color: rgba(0, 0, 0, 0.721); /* Fondo más oscuro */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,14 +10,16 @@
 
 .modal-content {
   background-color: #0a192f; /* Azul oscuro para el fondo del modal */
-  border-radius: 12px;
+  border: 4px solid #2271D1; /* Borde azul tenue */
   padding: 32px; /* Más espacio para darle un estilo más aireado */
   width: 100%;
+  font-size: 0.5rem;
   max-width: 600px; /* Más ancho */
   max-height: 100vh; /* Límite de altura */
   overflow-y: auto; /* Habilitar scroll si es necesario */
   position: relative; /* Necesario para posicionar la "X" */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  border-radius: 16px; /* Esquinas redondeadas */
 }
 
 .modal-header {
@@ -35,18 +37,28 @@
 
 .close-button {
   position: relative;
-  top: 12px;
-  left: 200px; /* Posición en la esquina superior derecha */
-  color: #ffffff; /* Azul brillante */
-  border: none;
+  top: -50px;
+  left: 500px; /* Posición en la esquina superior derecha */
+  color: #ffffff; /* Color del texto */
+  border: 2px dashed #ffffff; /* Borde azul */
   cursor: pointer;
   font-size: 1.5rem;
-  padding: 4px;
+  padding: 0.5rem; /* Ajusta el relleno interno */
+  width: 40px;
+  height: 40px; /* Asegúrate de que el ancho y alto sean iguales */
+  border-radius: 50%; /* Hace el borde circular */
+  display: flex; /* Centra el contenido */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  background-color: transparent; /* Asegúrate de que el fondo sea transparente */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Para un efecto visual agradable */
 }
 
 .close-button:hover {
-  color: #00b4d8; /* Azul más brillante al pasar el cursor */
+  background-color: rgba(255, 255, 255, 0.1); /* Efecto hover */
+  transform: scale(1.1); /* Pequeño aumento en tamaño */
 }
+
 
 .form-group label {
   display: block;
@@ -54,26 +66,27 @@
   font-size: 1rem;
   margin-bottom: 8px;
 }
-
-.form-group input,
-.form-group select,
-.form-group textarea {
+.modal-content .form-group input,
+.modal-content .form-group select,
+.modal-content .form-group textarea {
   width: 100%;
   padding: 12px;
-  background-color: #112240; /* Azul oscuro */
-  border: 1px solid #3b536d; /* Borde azul tenue */
+  background-color: #0a192f !important; /* Fondo azul asegurado */
+  border: 1px solid #2271D1; /* Borde azul tenue */
   border-radius: 6px;
-  color: #ffffff;
+  color: #ffffff !important; /* Texto blanco asegurado */
   font-size: 1rem;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: #2271D1; /* Azul brillante */
-  outline: none;
-  box-shadow: 0 0 8px #2271D1;
+.modal-content .form-group input:focus,
+.modal-content .form-group select:focus,
+.modal-content .form-group textarea:focus {
+  border-color: #2271D1 !important; /* Azul brillante */
+  outline: none !important;
+  box-shadow: 0 0 8px #2271D1 !important; /* Brillo azul asegurado */
 }
+
+
 
 .button-group {
   display: flex;
