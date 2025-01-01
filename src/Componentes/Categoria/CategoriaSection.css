@@ -1,6 +1,12 @@
+
+/* Contenedor General */
 .categoria-section {
-  margin: 2rem 0;
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 2000px; /* Máximo ancho */
+  box-sizing: border-box;
 }
+
 
 /* Estilo para el título de la categoría */
 .categoria-title {
@@ -11,7 +17,7 @@
   border-radius: 8px;
   margin-bottom: 1rem;
   font-size: 1.5rem; /* Ajusta el tamaño de la fuente según sea necesario */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para el título */
+  box-shadow: 0 2px 4px rgba(74, 167, 46, 0.1); /* Sombra para el título */
 }
 
 /* Clases para los colores de fondo */
@@ -46,10 +52,56 @@
   width: 50px;
 }
 
+
+.video-card img {
+  max-width: 100%; /* Se adapta al tamaño del contenedor */
+  border-radius: 8px;   
+}
+
+.video-card:hover {
+  transform: scale(1.05);
+}
+
+/* Texto dentro de la tarjeta */
+.video-card h3 {
+  color: white;
+  margin: 0.5rem 0;
+}
+
+.video-card p {
+  color: #b0b0b0;
+}
+
+/* Ajustes de diseño responsivo */
+@media (max-width: 1024px) {
+  /* Para tablets */
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .categoria-title {
+    font-size: 1.2rem; /* Reducir el tamaño del título */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Para móviles */
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem; /* Reducir espacio entre elementos */
+  }
+  .categoria-title {
+    font-size: 1rem; /* Ajuste adicional del título */
+  }
+  .video-card {
+    padding: 0.8rem;
+  }
+}
+
+/* Grilla para las tarjetas */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-  gap: 1.5rem; /* Espacio entre columnas */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Se adapta automáticamente */
+  gap: 1.5rem; /* Espaciado entre elementos */
 }
 
 .flex {

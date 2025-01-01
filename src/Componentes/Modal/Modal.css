@@ -1,27 +1,30 @@
+/* Modal Overlay */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.721); /* Fondo más oscuro */
+  background-color: rgba(0, 0, 0, 0.721); /* Fondo oscuro */
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 50;
 }
 
+/* Modal Content */
 .modal-content {
-  background-color: #0a192f; /* Azul oscuro para el fondo del modal */
+  background-color: #0a192f; /* Fondo azul oscuro */
   border: 4px solid #2271D1; /* Borde azul tenue */
-  padding: 32px; /* Más espacio para darle un estilo más aireado */
+  padding: 32px; 
   width: 100%;
-  font-size: 0.5rem;
-  max-width: 600px; /* Más ancho */
-  max-height: 100vh; /* Límite de altura */
-  overflow-y: auto; /* Habilitar scroll si es necesario */
-  position: relative; /* Necesario para posicionar la "X" */
+  max-width: 600px; /* Max width para pantallas grandes */
+  max-height: 90vh; /* Limita la altura a un 90% de la pantalla */
+  overflow-y: auto; /* Scroll si es necesario */
+  position: relative;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-  border-radius: 16px; /* Esquinas redondeadas */
+  border-radius: 16px;
+  font-size: 1rem; /* Tamaño de fuente base */
 }
 
+/* Modal Header */
 .modal-header {
   margin-bottom: 16px;
   text-align: center;
@@ -35,63 +38,61 @@
   margin: 0;
 }
 
+/* Close Button */
 .close-button {
-  position: relative;
-  top: -50px;
-  left: 500px; /* Posición en la esquina superior derecha */
-  color: #ffffff; /* Color del texto */
-  border: 2px dashed #ffffff; /* Borde azul */
+  position: absolute;
+  top: 10px;
+  right: 10px; /* Alineado a la derecha del modal */
+  color: #ffffff;
+  border: 2px dashed #ffffff;
   cursor: pointer;
   font-size: 1.5rem;
-  padding: 0.5rem; /* Ajusta el relleno interno */
+  padding: 0.5rem;
   width: 40px;
-  height: 40px; /* Asegúrate de que el ancho y alto sean iguales */
-  border-radius: 50%; /* Hace el borde circular */
-  display: flex; /* Centra el contenido */
-  align-items: center; /* Centra verticalmente */
-  justify-content: center; /* Centra horizontalmente */
-  background-color: transparent; /* Asegúrate de que el fondo sea transparente */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Para un efecto visual agradable */
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .close-button:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Efecto hover */
-  transform: scale(1.1); /* Pequeño aumento en tamaño */
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
 }
 
-
+/* Form Styles */
 .form-group label {
   display: block;
-  color: #ccd6f6; /* Azul claro */
+  color: #ccd6f6;
   font-size: 1rem;
   margin-bottom: 8px;
 }
+
 .modal-content .form-group input,
 .modal-content .form-group select,
 .modal-content .form-group textarea {
   width: 100%;
   padding: 12px;
-  background-color: #0a192f !important; /* Fondo azul asegurado */
-  border: 1px solid #2271D1; /* Borde azul tenue */
+  background-color: #0a192f !important;
+  border: 1px solid #2271D1;
   border-radius: 6px;
-  color: #ffffff !important; /* Texto blanco asegurado */
+  color: #ffffff !important;
   font-size: 1rem;
 }
 
 .modal-content .form-group input:focus,
 .modal-content .form-group select:focus,
 .modal-content .form-group textarea:focus {
-  border-color: #2271D1 !important; /* Azul brillante */
+  border-color: #2271D1 !important;
   outline: none !important;
-  box-shadow: 0 0 8px #2271D1 !important; /* Brillo azul asegurado */
+  box-shadow: 0 0 8px #2271D1 !important;
 }
 
-
-
+/* Button Group */
 .button-group {
   display: flex;
   justify-content: flex-end;
-  gap: 16px; /* Espaciado más amplio entre botones */
+  gap: 16px;
   margin-top: 24px;
 }
 
@@ -107,20 +108,90 @@
 
 .reset-button {
   background-color: transparent;
-  border: 2px solid #ffffff; /* Borde azul */
+  border: 2px solid #ffffff;
   color: #ffffff;
 }
 
 .reset-button:hover {
-  background-color: rgba(100, 255, 218, 0.1); /* Azul claro semitransparente */
+  background-color: rgba(100, 255, 218, 0.1);
 }
 
 .save-button {
-  background-color: #03122F; /* Azul brillante */
-  border: 4px solid #1740926d; /* Borde azul */
-  color: #0544c3da; /* Texto azul oscuro */
+  background-color: #03122F;
+  border: 4px solid #1740926d;
+  color: #0544c3da;
 }
 
 .save-button:hover {
-  background-color: #1740926d; /* Azul más brillante */
+  background-color: #1740926d;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Para pantallas de tablet y móviles pequeños */
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 90%; /* Modal más ancho en pantallas pequeñas */
+    padding: 16px; /* Menos padding en pantallas pequeñas */
+  }
+
+  .modal-header h2 {
+    font-size: 1.4rem; /* Reducción del tamaño del título */
+  }
+
+  .form-group label {
+    font-size: 0.9rem; /* Reducción del tamaño de la fuente de las etiquetas */
+  }
+
+  .modal-content .form-group input,
+  .modal-content .form-group select,
+  .modal-content .form-group textarea {
+    font-size: 0.9rem; /* Reducción del tamaño de la fuente del formulario */
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px; /* Reduce el espacio entre botones */
+  }
+
+  .reset-button,
+  .save-button {
+    font-size: 0.9rem; /* Tamaño de texto más pequeño en los botones */
+    padding: 10px 18px; /* Ajusta el tamaño de los botones */
+  }
+}
+
+/* Para pantallas de teléfonos móviles más pequeños */
+@media (max-width: 480px) {
+  .modal-content {
+    max-width: 95%; /* Más ancho aún en dispositivos móviles muy pequeños */
+    padding: 12px; /* Ajuste adicional en el padding */
+  }
+
+  .modal-header h2 {
+    font-size: 1.2rem; /* Reducción del tamaño del título en móviles */
+  }
+
+  .form-group label {
+    font-size: 0.8rem; /* Reducción del tamaño de las etiquetas */
+  }
+
+  .modal-content .form-group input,
+  .modal-content .form-group select,
+  .modal-content .form-group textarea {
+    font-size: 0.8rem; /* Reducción en tamaño de la fuente de los inputs */
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px; /* Menos espacio entre botones */
+  }
+
+  .reset-button,
+  .save-button {
+    font-size: 0.8rem; /* Reducción en el tamaño de los botones */
+    padding: 8px 14px; /* Botones más pequeños */
+  }
 }

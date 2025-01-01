@@ -1,161 +1,143 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Header from '../Componentes/Header/Header';
 import Banner from '../Componentes/Banner/Banner';
 import CategoriaSection from '../Componentes/Categoria/CategoriaSection';
 import Footer from '../Componentes/Footer/Footer';
 import Modal from '../Componentes/Modal/Modal';
 
+const API_URL = 'http://localhost:3001'; // json-server URL
+
 const Home = () => {
   const [videos, setVideos] = useState({
-    frontend: [
-      {
-        title: 'Video Frontend 1',
-        category: 'Frontend',
-        image: "https://i.ytimg.com/vi/PztCEdIJITY/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBbji3kKWxV2L4kTNj7sme6ChFt8g",
-        description: 'Descripción de video Frontend 1',
-        video: 'https://www.youtube.com/watch?v=PztCEdIJITY',
-      },
-      {
-        title: 'Video Frontend 2',
-        category: 'Frontend',
-        image: "https://i.ytimg.com/vi/GJfOSoaXk4s/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBXZVPLM2ImD_Nt2QSlGFdXIvbMig",
-        description: 'Descripción de video Frontend 2',
-        video: 'https://www.youtube.com/watch?v=PztCEdIJITY',
-      },
-      {
-        title: 'Video Frontend 3',
-        category: 'Frontend',
-        image: "https://i.ytimg.com/vi/rpvrLaBQwgg/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBkb-PJrLWrffCvsevbaS6oMxcyhQ",
-        description: 'Descripción de video Frontend 3',
-        video: 'https://www.youtube.com/watch?v=PztCEdIJITY',
-      }
-    ],
-    backend: [
-      {
-        title: 'Video Backend 1',
-        category: 'Backend',
-        image: "https://i.ytimg.com/vi/t-iqt1b2qqk/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCcc4ILIJj5JKEJ8UJQZ--4bRrZqQ",
-        description: 'Descripción de video Backend 1',
-        video: 'https://www.youtube.com/watch?v=PztCEdIJITY',
-      },
-      {
-        title: 'Video Backend 2',
-        category: 'Backend',
-        image: "https://i.ytimg.com/vi/cLLKVd5CNLc/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLABXD79Lpl3_vSKAijb1doXYAHtfQ",
-        description: 'Descripción de video Backend 2',
-        video: 'https://www.youtube.com/watch?v=PztCEdIJITY',
-      },
-      {
-        title: 'Video Backend 3',
-        category: 'Backend',
-        image: "https://i.ytimg.com/vi/EoPvlE85XAQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLD80rSRC-pV7GFZ7LorycqSeDY3xA",
-        description: 'Descripción de video Backend 3',
-        video: 'https://www.youtube.com/watch?v=PztCEdIJITY',
-      }
-    ],
-    'Innovación y Gestión': [
-      {
-        title: 'Video Innovación y Gestión 1',
-        category: 'Innovación y Gestión',
-        image: "https://i.ytimg.com/vi/vhwspfvI52k/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCqexH9fRQBKlGPWhCiwZvXZxuU3g",
-        description: 'Descripción de video Innovación y gestión 1',
-        video: 'https://www.youtube.com/watch?v=PztCEdIJITY',
-      },
-      {
-        title: 'Video Innovación y Gestión 2',
-        category: 'Innovación y Gestión',
-        image: "https://i.ytimg.com/vi/YhR7Zp8NUzE/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLA85X__bV2DjIuEnZUEPZyoRkurpw",
-        description: 'Descripción de video Innovación y gestión 2',
-        video: 'https://www.youtube.com/watch?v=PztCEdIJITY',
-      },
-      {
-        title: 'Video Innovación y Gestión 3',
-        category: 'Innovación y Gestión',
-        image: "https://i.ytimg.com/vi/6N3OkLCfK-0/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLD15u5dbwMTsHSMc_X7uvc5eTr-9A",
-        description: 'Descripción de video Innovación y gestión 3',
-        video: 'https://www.youtube.com/watch?v=PztCEdIJITY',
-      }
-    ]
+    frontend: [],
+    backend: [],
+    'Innovación y Gestión': []
   });
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Cargar videos iniciales
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/videos`);
+        // Organizar videos por categoría
+        const videosByCategory = {
+          frontend: [],
+          backend: [],
+          'Innovación y Gestión': []
+        };
+        
+        response.data.forEach(video => {
+          const category = video.category === 'Innovación y Gestión' 
+            ? 'Innovación y Gestión' 
+            : video.category.toLowerCase();
+          if (videosByCategory[category]) {
+            videosByCategory[category].push(video);
+          }
+        });
+        
+        setVideos(videosByCategory);
+        setLoading(false);
+      } catch (err) {
+        setError('Error al cargar los videos');
+        setLoading(false);
+        console.error('Error fetching videos:', err);
+      }
+    };
+
+    fetchVideos();
+  }, []);
 
   const handleEdit = (video) => {
     setSelectedVideo(video);
     setIsModalOpen(true);
   };
-  
-  const handleSave = (updatedVideo) => {
-    setVideos((prevVideos) => {
-      // Crear copias de trabajo
-      const newVideos = { ...prevVideos };
-      
-      // Buscar en qué categoría está el video original
-      for (const category in newVideos) {
-        const videoIndex = newVideos[category].findIndex(
-          v => v.title === selectedVideo.title
-        );
-        
-        if (videoIndex !== -1) {
-          // Eliminar el video de su categoría original
-          newVideos[category] = newVideos[category].filter(
-            v => v.title !== selectedVideo.title
-          );
-          
-          // Usar la categoría exacta del formulario
-          const newCategory = updatedVideo.category === 'Innovación y Gestión' 
-            ? 'Innovación y Gestión' 
-            : updatedVideo.category.toLowerCase();
-          
-          // Asegurar que la categoría existe
-          if (!newVideos[newCategory]) {
-            newVideos[newCategory] = [];
-          }
-          
-          // Agregar video actualizado a la nueva categoría
-          newVideos[newCategory].push(updatedVideo);
-          
-          break;
-        }
-      }
-      
-      return newVideos;
-    });
-    
-    setIsModalOpen(false);
-  };
 
-  const handleDelete = (category, videoIndex) => {
-    setVideos((prevVideos) => {
-      const updatedCategory = [...prevVideos[category]];
-      updatedCategory.splice(videoIndex, 1);
-      return {
-        ...prevVideos,
-        [category]: updatedCategory,
-      };
-    });
+  const handleSave = async (updatedVideo) => {
+    try {
+      // Actualizar el video en el servidor
+      await axios.put(`${API_URL}/videos/${updatedVideo.id}`, updatedVideo);
+      
+      // Actualizar el estado local
+      setVideos(prevVideos => {
+        const newVideos = { ...prevVideos };
+        
+        // Remover el video de su categoría anterior
+        Object.keys(newVideos).forEach(category => {
+          newVideos[category] = newVideos[category].filter(
+            v => v.id !== updatedVideo.id
+          );
+        });
+        
+        // Añadir el video actualizado a su nueva categoría
+        const category = updatedVideo.category === 'Innovación y Gestión'
+          ? 'Innovación y Gestión'
+          : updatedVideo.category.toLowerCase();
+        
+        if (!newVideos[category]) {
+          newVideos[category] = [];
+        }
+        
+        newVideos[category].push(updatedVideo);
+        return newVideos;
+      });
+      
+      setIsModalOpen(false);
+    } catch (err) {
+      console.error('Error updating video:', err);
+    }
   };
+  
+
+  const handleDelete = async (category, videoIndex) => {
+    const videoToDelete = videos[category][videoIndex];
+    
+    try {
+      // Eliminar el video del servidor
+      await axios.delete(`${API_URL}/videos/${videoToDelete.id}`);
+      
+      // Actualizar el estado local
+      setVideos(prevVideos => {
+        const updatedCategory = [...prevVideos[category]];
+        updatedCategory.splice(videoIndex, 1);
+        return {
+          ...prevVideos,
+          [category]: updatedCategory,
+        };
+      });
+    } catch (err) {
+      console.error('Error deleting video:', err);
+    }
+  };
+  
+
+  if (loading) {
+    return <div>Cargando videos...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <div className="min-h-screen bg-[#1a1e29]">
       <Header />
       <Banner />
       <div className="py-4">
-      {Object.keys(videos).map((categoryKey) => (
-  <CategoriaSection
-    key={categoryKey}
-    title={
-      categoryKey === "Innovación y Gestión" 
-        ? "INNOVACIÓN Y GESTIÓN" 
-        : categoryKey.toUpperCase()
-    }
-    videos={videos[categoryKey]}
-    borderColor={`border-${categoryKey.toLowerCase().replace(/\s+/g, '')}`}
-    onEdit={handleEdit}
-    onDelete={(index) => handleDelete(categoryKey, index)}
-  />
-))}
+        {Object.keys(videos).map((categoryKey) => (
+          <CategoriaSection
+            key={categoryKey}
+            title={categoryKey.toUpperCase()}
+            videos={videos[categoryKey]}
+            borderColor={`border-${categoryKey.toLowerCase().replace(/\s+/g, '')}`}
+            onEdit={handleEdit}
+            onDelete={(index) => handleDelete(categoryKey, index)}
+          />
+        ))}
       </div>
       <Footer />
       {isModalOpen && (

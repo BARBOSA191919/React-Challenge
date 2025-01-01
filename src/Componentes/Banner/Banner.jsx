@@ -8,7 +8,6 @@ const Banner = () => {
     <div className="banner">
       <img src={bannerImage} alt="Challenge React" className="banner-image" />
       <img src={player} alt="Player React" className="player-image" />
-
       <div className="banner-content">
         <div className="banner-tag">FRONT END</div>
         <h1 className="banner-title">Challenge React</h1>
