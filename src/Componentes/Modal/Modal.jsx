@@ -15,6 +15,7 @@ const Modal = ({ isOpen, onClose, videoData, onSave }) => {
   useEffect(() => {
     if (videoData) {
       setFormData({
+        id: videoData.id,  // Aquí agregamos el id
         title: videoData.title || '',
         category: videoData.category || '',
         image: videoData.image || '',
@@ -30,12 +31,13 @@ const Modal = ({ isOpen, onClose, videoData, onSave }) => {
       [e.target.name]: e.target.value
     });
   };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSave(formData);
+    onSave(formData);  // Aquí ya estamos pasando el formData que incluye el id
     onClose();
   };
+  
 
   const handleReset = () => {
     setFormData({
