@@ -6,7 +6,7 @@ Una aplicación web de gestión de videos desarrollada en React, que permite org
 
 Esta aplicación funciona como una plataforma de gestión de videos donde los usuarios pueden agregar, visualizar y organizar contenido multimedia por categorías. Incluye funcionalidades para crear nuevos videos, mostrarlos en diferentes secciones y gestionar el contenido mediante una interfaz intuitiva.
 
-## 🖼️ Capturas de Pantalla
+## 📷 Capturas de Pantalla
 
 ### Vista Principal
 ![Vista Principal](./screenshots/home.png)
