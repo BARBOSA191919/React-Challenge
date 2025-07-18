@@ -6,7 +6,7 @@ import CategoriaSection from '../Componentes/Categoria/CategoriaSection';
 import Footer from '../Componentes/Footer/Footer';
 import Modal from '../Componentes/Modal/Modal';
 
-const API_URL = `${process.env.REACT_APP_API_URL}videos`;
+const API_URL = `${process.env.REACT_APP_API_URL}/videos`;
 
 const Home = () => {
   const [videos, setVideos] = useState({
