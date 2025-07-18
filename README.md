@@ -1,4 +1,4 @@
-# Barbosa React Challenge
+# React Challenge
 
 Una aplicación web de gestión de videos desarrollada en React, que permite organizar y visualizar contenido multimedia por categorías con una interfaz moderna y responsive.
 
@@ -13,22 +13,23 @@ Esta aplicación funciona como una plataforma de gestión de videos donde los us
 *Página principal con banner destacado y videos organizados por categorías*
 
 ### Gestión de Videos
-![Gestión de Videos](./screenshots/video-cards.png)
+<img width="1866" height="1022" alt="image" src="https://github.com/user-attachments/assets/ce3f1e2c-fe31-4637-82cb-020053affec3" />
+<img width="1862" height="1016" alt="Image" src="https://github.com/user-attachments/assets/5464e4d7-8e9d-4c90-b388-d8e893bd1e64" />
 *Tarjetas de video mostrando el contenido organizado por categorías*
 
 ### Formulario Nuevo Video
-![Nuevo Video](./screenshots/nuevo-video.png)
+<img width="1862" height="985" alt="Image" src="https://github.com/user-attachments/assets/2adce61a-aea2-4ec3-a292-e6fb6b7ba9a3" />
 *Formulario para agregar nuevos videos a la plataforma*
 
 ### Modal de Video
-![Modal](./screenshots/modal.png)
+<img width="1860" height="1027" alt="Image" src="https://github.com/user-attachments/assets/732fb783-4a65-4f24-9d30-7e0680a1e339" />
 *Modal para visualizar videos en detalle*
 
-### Responsive Design
-![Responsive](./screenshots/responsive.png)
-*Diseño adaptativo para dispositivos móviles y tablets*
-
-> **Nota:** Para agregar las imágenes, crea una carpeta `screenshots` en la raíz del proyecto y coloca las capturas de pantalla correspondientes.
+<div align="center">
+<h3>Responsive Design</h3> 
+<img width="462" height="756" alt="Image" src="https://github.com/user-attachments/assets/5bf646e4-009a-4a86-94d3-a7fb880df14e" />
+<p><em>Diseño adaptativo para dispositivos móviles y tablets*</em></p>
+</div>
 
 ## 🚀 Tecnologías Utilizadas
 
