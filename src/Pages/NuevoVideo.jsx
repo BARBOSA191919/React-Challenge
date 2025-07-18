@@ -4,7 +4,7 @@ import Header from '../Componentes/Header/Header';
 import Footer from '../Componentes/Footer/Footer';
 import './NuevoVideo.css';
 
-const API_URL = `${process.env.REACT_APP_API_URL}/videos`;
+const API_URL = `${process.env.REACT_APP_API_URL}videos`;
 
 const NuevoVideo = () => {
   const [form, setForm] = useState({
