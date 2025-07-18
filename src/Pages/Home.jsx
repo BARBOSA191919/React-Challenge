@@ -6,7 +6,7 @@ import CategoriaSection from '../Componentes/Categoria/CategoriaSection';
 import Footer from '../Componentes/Footer/Footer';
 import Modal from '../Componentes/Modal/Modal';
 
-const API_URL = 'http://localhost:3001'; // json-server URL
+const API_URL = 'https://backend-react-challenge.onrender.com/'; 
 
 const Home = () => {
   const [videos, setVideos] = useState({

@@ -1,26 +1,10 @@
 {
   "videos": [
     {
-      "id": "1",
-      "title": "Video Frontend 1",
-      "category": "Frontend",
-      "image": "https://i.ytimg.com/vi/PztCEdIJITY/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBbji3kKWxV2L4kTNj7sme6ChFt8g",
-      "video": "https://www.youtube.com/watch?v=PztCEdIJITY",
-      "description": "Descripción de video Frontend 1"
-    },
-    {
-      "id": "2",
-      "title": "Video Frontend 2",
-      "category": "Frontend",
-      "image": "https://i.ytimg.com/vi/GJfOSoaXk4s/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBXZVPLM2ImD_Nt2QSlGFdXIvbMig",
-      "video": "https://www.youtube.com/watch?v=PztCEdIJITY",
-      "description": "Descripción de video Frontend 2"
-    },
-    {
       "id": "3",
-      "title": "Video Frontend 3",
+      "title": "Video Frontend 34",
       "category": "Frontend",
-      "image": "https://i.ytimg.com/vi/rpvrLaBQwgg/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBkb-PJrLWrffCvsevbaS6oMxcyhQ",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3vteG2DudlxILcIB8idhgX49HFuCk4_nEtQ&s",
       "video": "https://www.youtube.com/watch?v=PztCEdIJITY",
       "description": "Descripción de video Frontend 3"
     },
@@ -65,12 +49,20 @@
       "description": "Descripción de video Innovación y gestión 2"
     },
     {
-      "id": "9",
-      "title": "Video Innovación y Gestión 3",
-      "category": "Innovación y Gestión",
-      "image": "https://i.ytimg.com/vi/6N3OkLCfK-0/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLD15u5dbwMTsHSMc_X7uvc5eTr-9A",
+      "id": "869b",
+      "title": "gsap",
+      "category": "Frontend",
+      "image": "https://i.ytimg.com/vi/rpvrLaBQwgg/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBkb-PJrLWrffCvsevbaS6oMxcyhQ",
       "video": "https://www.youtube.com/watch?v=PztCEdIJITY",
-      "description": "Descripción de video Innovación y gestión 3"
+      "description": "libreria de gsap"
+    },
+    {
+      "id": "e35e",
+      "title": "saksa",
+      "category": "Frontend",
+      "image": "https://media2.dev.to/dynamic/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi5vke8fu8g8659hjvv22.jpeg",
+      "video": "https://www.youtube.com/watch?v=PztCEdIJITY",
+      "description": "sasasas"
     }
   ]
 }
