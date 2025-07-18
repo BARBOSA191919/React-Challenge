@@ -6,7 +6,7 @@ import CategoriaSection from '../Componentes/Categoria/CategoriaSection';
 import Footer from '../Componentes/Footer/Footer';
 import Modal from '../Componentes/Modal/Modal';
 
-const API_URL = 'https://backend-react-challenge.onrender.com/'; 
+const API_URL = `${process.env.REACT_APP_API_URL}/videos`;
 
 const Home = () => {
   const [videos, setVideos] = useState({
@@ -23,7 +23,7 @@ const Home = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await axios.get(`${API_URL}/videos`);
+        const response = await axios.get(API_URL);
         // Organizar videos por categoría
         const videosByCategory = {
           frontend: [],
@@ -60,7 +60,8 @@ const Home = () => {
   const handleSave = async (updatedVideo) => {
     try {
       // Actualizar el video en el servidor
-      await axios.put(`${API_URL}/videos/${updatedVideo.id}`, updatedVideo);
+      await axios.put(`${API_URL}/${updatedVideo.id}`, updatedVideo);
+
       
       // Actualizar el estado local
       setVideos(prevVideos => {
@@ -98,7 +99,8 @@ const Home = () => {
     
     try {
       // Eliminar el video del servidor
-      await axios.delete(`${API_URL}/videos/${videoToDelete.id}`);
+      await axios.delete(`${API_URL}/${videoToDelete.id}`);
+
       
       // Actualizar el estado local
       setVideos(prevVideos => {

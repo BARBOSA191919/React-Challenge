@@ -4,6 +4,8 @@ import Header from '../Componentes/Header/Header';
 import Footer from '../Componentes/Footer/Footer';
 import './NuevoVideo.css';
 
+const API_URL = `${process.env.REACT_APP_API_URL}/videos`;
+
 const NuevoVideo = () => {
   const [form, setForm] = useState({
     title: '',
@@ -37,7 +39,7 @@ const handleSubmit = async (e) => {
   } else {
     setLoading(true);
     try {
-      await axios.post('https://backend-react-challenge.onrender.com/', form);
+      await axios.post(API_URL, form);
       alert('¡Nuevo video creado con éxito!');
       setForm({ title: '', category: '', image: '', video: '', description: '' });
       setErrors({});
