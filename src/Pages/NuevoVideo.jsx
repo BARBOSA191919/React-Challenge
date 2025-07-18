@@ -29,26 +29,26 @@ const NuevoVideo = () => {
     return newErrors;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const newErrors = validate();
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-    } else {
-      setLoading(true);
-      try {
-        const response = await axios.post('http://localhost:3001/videos', form);
-        alert('¡Nuevo video creado con éxito!');
-        setForm({ title: '', category: '', image: '', video: '', description: '' });
-        setErrors({});
-      } catch (error) {
-        console.error('Error al crear el video:', error);
-        alert('Hubo un error al crear el video. Intenta nuevamente.');
-      } finally {
-        setLoading(false);
-      }
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const newErrors = validate();
+  if (Object.keys(newErrors).length > 0) {
+    setErrors(newErrors);
+  } else {
+    setLoading(true);
+    try {
+      await axios.post('https://backend-react-challenge.onrender.com/', form);
+      alert('¡Nuevo video creado con éxito!');
+      setForm({ title: '', category: '', image: '', video: '', description: '' });
+      setErrors({});
+    } catch (error) {
+      console.error('Error al crear el video:', error);
+      alert('Hubo un error al crear el video. Intenta nuevamente.');
+    } finally {
+      setLoading(false);
     }
-  };
+  }
+};
 
   const handleReset = () => {
     setForm({ title: '', category: '', image: '', video: '', description: '' });
