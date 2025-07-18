@@ -1,70 +1,200 @@
-# Getting Started with Create React App
+# Barbosa React Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Una aplicación web de gestión de videos desarrollada en React, que permite organizar y visualizar contenido multimedia por categorías con una interfaz moderna y responsive.
 
-## Available Scripts
+## 📋 Descripción
 
-In the project directory, you can run:
+Esta aplicación funciona como una plataforma de gestión de videos donde los usuarios pueden agregar, visualizar y organizar contenido multimedia por categorías. Incluye funcionalidades para crear nuevos videos, mostrarlos en diferentes secciones y gestionar el contenido mediante una interfaz intuitiva.
 
-### `npm start`
+## 🖼️ Capturas de Pantalla
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Vista Principal
+![Vista Principal](./screenshots/home.png)
+*Página principal con banner destacado y videos organizados por categorías*
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Gestión de Videos
+![Gestión de Videos](./screenshots/video-cards.png)
+*Tarjetas de video mostrando el contenido organizado por categorías*
 
-### `npm test`
+### Formulario Nuevo Video
+![Nuevo Video](./screenshots/nuevo-video.png)
+*Formulario para agregar nuevos videos a la plataforma*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Modal de Video
+![Modal](./screenshots/modal.png)
+*Modal para visualizar videos en detalle*
 
-### `npm run build`
+### Responsive Design
+![Responsive](./screenshots/responsive.png)
+*Diseño adaptativo para dispositivos móviles y tablets*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> **Nota:** Para agregar las imágenes, crea una carpeta `screenshots` en la raíz del proyecto y coloca las capturas de pantalla correspondientes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Tecnologías Utilizadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React** - Biblioteca principal para la construcción de la interfaz
+- **Tailwind CSS** - Framework CSS para diseño rápido y responsivo
+- **CSS3** - Estilos personalizados adicionales
+- **JSON Server** - Base de datos simulada para desarrollo
+- **HTML5** - Estructura semántica
 
-### `npm run eject`
+## 📁 Estructura del Proyecto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+barbosa191919-react-challenge/
+├── README.md
+├── db.json                 # Base de datos simulada
+├── package.json
+├── tailwind.config.js      # Configuración de Tailwind
+├── public/
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
+└── src/
+    ├── App.css
+    ├── App.js
+    ├── App.test.js
+    ├── index.css
+    ├── index.js
+    ├── reportWebVitals.js
+    ├── setupTests.js
+    ├── tailwind.config.js
+    ├── Componentes/
+    │   ├── Banner/
+    │   ├── Categoria/
+    │   ├── Footer/
+    │   ├── Header/
+    │   ├── Modal/
+    │   └── VideoCard/
+    └── Pages/
+        ├── Home.jsx
+        ├── NuevoVideo.css
+        └── NuevoVideo.jsx
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🧩 Componentes
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Componentes de Layout
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Header** - Barra de navegación principal con menú y branding
+- **Footer** - Pie de página con información y enlaces
+- **Banner** - Sección destacada para contenido principal
 
-## Learn More
+### Componentes de Contenido
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **VideoCard** - Tarjeta individual para mostrar información de videos
+- **CategoriaSection** - Sección que agrupa videos por categorías
+- **Modal** - Ventana modal para visualización detallada de videos
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Páginas
 
-### Code Splitting
+- **Home** - Página principal que muestra todos los videos organizados
+- **NuevoVideo** - Formulario para agregar nuevos videos al sistema
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🛠️ Instalación
 
-### Analyzing the Bundle Size
+1. Clona el repositorio:
+```bash
+git clone [URL_DEL_REPOSITORIO]
+cd barbosa191919-react-challenge
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Instala las dependencias:
+```bash
+npm install
+```
 
-### Making a Progressive Web App
+3. Inicia el servidor JSON (base de datos simulada):
+```bash
+npx json-server --watch db.json --port 3001
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. En otra terminal, inicia la aplicación:
+```bash
+npm start
+```
 
-### Advanced Configuration
+5. Abre tu navegador en `http://localhost:3000`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📝 Scripts Disponibles
 
-### Deployment
+- `npm start` - Ejecuta la aplicación en modo desarrollo
+- `npm test` - Ejecuta las pruebas unitarias
+- `npm run build` - Construye la aplicación para producción
+- `npm run eject` - Expone la configuración de webpack (irreversible)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🌟 Características
 
-### `npm run build` fails to minify
+- ✅ Gestión completa de videos por categorías
+- ✅ Interfaz moderna con Tailwind CSS
+- ✅ Formularios interactivos para agregar contenido
+- ✅ Modal para visualización detallada
+- ✅ Diseño completamente responsive
+- ✅ Base de datos simulada con JSON Server
+- ✅ Arquitectura modular y escalable
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🎯 Funcionalidades
+
+- **Visualización de Videos**: Navega por videos organizados por categorías
+- **Agregar Videos**: Formulario completo para añadir nuevo contenido
+- **Modal de Detalles**: Visualización ampliada de videos seleccionados
+- **Categorización**: Organización automática por categorías
+- **Responsive**: Adaptación perfecta a todos los dispositivos
+
+## 📱 Responsividad
+
+La aplicación utiliza Tailwind CSS para garantizar una experiencia óptima en:
+- 💻 Escritorio (1024px+)
+- 📱 Dispositivos móviles (320px-768px)
+- 📊 Tablets (768px-1024px)
+
+## 🗃️ Base de Datos
+
+El archivo `db.json` contiene la estructura de datos simulada:
+```json
+{
+  "videos": [
+    {
+      "id": 1,
+      "titulo": "Título del video",
+      "categoria": "Categoría",
+      "url": "URL del video",
+      "descripcion": "Descripción del contenido"
+    }
+  ],
+  "categorias": [...]
+}
+```
+
+## 🔧 Configuración de Tailwind
+
+El proyecto incluye configuración personalizada de Tailwind CSS en `tailwind.config.js` para:
+- Colores personalizados
+- Breakpoints específicos
+- Componentes reutilizables
+- Utilidades extendidas
+
+## 🤝 Contribución
+
+1. Haz un fork del proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commitea tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## 👨‍💻 Autor
+
+**Barbosa191919**
+
+## 📞 Contacto
+
+Para consultas o sugerencias:
+- GitHub: [@barbosa191919](https://github.com/barbosa191919)
+
+---
+
+⭐ ¡No olvides dar una estrella al proyecto si te fue útil!
